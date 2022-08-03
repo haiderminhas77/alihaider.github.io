@@ -28180,7 +28180,9 @@ blockquote,
     </style>
     <title>Ali Haider Resume | Web Development</title>
 <link rel="icon" type="image/x-icon" href="https://cdn.shopify.com/s/files/1/0396/7280/7587/files/photofunny.net_-removebg-preview_bede0d94-a0a8-4bed-92b5-9d5250db9741.png?v=1659430067">
-</head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    </head>
 
 <body>
     <header class="header">
@@ -28247,15 +28249,9 @@ blockquote,
                                                                     </h1>
                                                                     <div class="started-content">
                                                                         <div class="h-subtitles">
-                                                                            <div class="h-subtitle typing-subtitle"
-                                                                                style="display: none;">
-                                                                                <p> <span> Web Designer </span></p>
-                                                                                <p> <span> Programmer </span></p>
-                                                                                <p> <span> Consultant and Mentor </span>
-                                                                                </p>
-                                                                            </div> <span class="typed-subtitle"> <span>
-                                                                                    Programmer </span></span><span
-                                                                                class="typed-cursor">|</span>
+                                                                            <div  class="h-subtitle typing-subtitle">
+                                                                             <span id="typed" style="white-space:pre;" class="typed">
+                                                                            </div>
                                                                         </div>
                                                                         <div class="h-text">
                                                                             <div>
@@ -29370,5 +29366,18 @@ blockquote,
         </div>
     </div>
 </body>
-
+    
+    <script>
+      	$("#typed").typed({
+  		strings: ["Web Developer", "Shopify Developer", "Wordpress Developer"],
+  		typeSpeed: 100,
+  		startDelay: 0,
+  		backSpeed: 60,
+  		backDelay: 2000,
+  		loop: true,
+  		cursorChar: "|",
+  		contentType: 'html'
+  	});
+    </script>
+    
 </html>
