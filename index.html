@@ -262,7 +262,7 @@
     <section class="flex justify-center items-center text-gray-600 h-screen body-font relative contactform hidden">
       <div class="container px-5 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get In Touch</h1>
+          <a href="tel:+923335913229"><h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get In Touch</h1></a>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
           <form action="https://formsubmit.co/haideraliminhas77@gmail.com" method="POST">
@@ -370,13 +370,4 @@
     }
   }
   setInterval(updateGradient, 10);
-  $(".special-sbtn").click(function() {
-    $(".protcard").addClass('hidden');
-    $(".contactform").removeClass('hidden');
-  });
-  $("#login-button").click(function(event) {
-    event.preventDefault();
-    $('form').fadeOut(500);
-    $('.wrapper').addClass('form-success');
-  });
 </script>
