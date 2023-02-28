@@ -116,17 +116,17 @@
           <form>
             <div class="mb-6">
               <label for="text" class="mb-2 block text-sm font-medium text-gray-900">Full Name</label>
-              <input type="text" id="email" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" required />
+              <input type="text" id="name" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" required />
             </div>
             <div class="mb-6">
               <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Email Address</label>
-              <input type="email" id="password" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" required />
+              <input type="email" id="email" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" required />
             </div>
             <div class="mb-6">
               <label for="textarea" class="mb-2 block text-sm font-medium text-gray-900">Message</label>
-              <textarea id="w3review" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" name="w3review" rows="8" cols="52"></textarea>
+              <textarea id="message" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" name="message" rows="8" cols="52"></textarea>
             </div>
-            <button type="submit" class="w-full rounded-lg bg-green px-5 py-2 text-center text-sm font-medium text-white sm:w-auto">Submit</button>
+            <button id="btn_submit" type="submit" class="w-full rounded-lg bg-green px-5 py-2 text-center text-sm font-medium text-white sm:w-auto">Submit</button>
           </form>
         </div>
       </div>
@@ -162,7 +162,27 @@
     </footer>
 
   </div>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
   <script>
+    var btn_submit = document.getElementById('btn_submit');
+    btn_submit.addEventListener('click', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      var body = 'name: ' + name + '<br/> Email: ' + email + '<br/> Message' + message;
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "haideraliminhas77@gmail.com",
+        Password: "uwmesurwusnutwlr",
+        To: 'haideraliminhas77@gmail.com',
+        From: email,
+        Body: body
+      }).then(
+        message => alert(message)
+      );
+    });
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function(e) {
         e.preventDefault();
