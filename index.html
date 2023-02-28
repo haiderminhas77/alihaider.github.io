@@ -123,6 +123,10 @@
               <input type="email" id="email" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" required />
             </div>
             <div class="mb-6">
+              <label for="subject" class="mb-2 block text-sm font-medium text-gray-900">Subject</label>
+              <input type="subject" id="subject" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" required />
+            </div>
+            <div class="mb-6">
               <label for="textarea" class="mb-2 block text-sm font-medium text-gray-900">Message</label>
               <textarea id="message" class="block w-full rounded-lg border border-gray-300 bg-white p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" name="message" rows="8" cols="52"></textarea>
             </div>
@@ -170,14 +174,16 @@
       e.preventDefault();
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
+      var subject = document.getElementById('subject').value;
       var message = document.getElementById('message').value;
-      var body = 'name: ' + name + '<br/> Email: ' + email + '<br/> Message' + message;
+      var body = 'name: ' + name + '<br/> Email: ' + email + '<br/> Subject' + subject + '<br/> Message' + message;
       Email.send({
         Host: "smtp.gmail.com",
         Username: "haideraliminhas77@gmail.com",
         Password: "uwmesurwusnutwlr",
         To: 'haideraliminhas77@gmail.com',
         From: email,
+        subject: subject,
         Body: body
       }).then(
         message => alert(message)
