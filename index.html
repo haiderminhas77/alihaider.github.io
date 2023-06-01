@@ -8,7 +8,19 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <title>Ali Haider | Shopify Developer | Portfolio</title>
   <link rel="icon" type="image/x-icon" href="https://cdn.shopify.com/s/files/1/0763/4622/9047/files/Black_White_Minimalist_Logo-removebg-preview.png?v=1685612162">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/kenwheeler/slick/master/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/kenwheeler/slick/master/slick/slick-theme.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.rawgit.com/kenwheeler/slick/master/slick/slick.min.js"></script>
   <style>
+    .card{
+        display: flex!important;
+        margin:0 auto;
+    }
+    .slick-list{
+        overflow: visible;
+    }
     h1 {
       line-height: 1.2;
     }
@@ -25,6 +37,11 @@
     .border-green {
       border-color: #FFB400;
     }
+    @media(max-width:767px){
+        .footer-wrapper{
+            padding-top:0px;
+        }
+    }
   </style>
 </head>
 
@@ -36,7 +53,7 @@
           <div class="flex max-w-lg flex-col items-start justify-start">
             <small class="text-base text-[#FFB400] md:text-base lg:text-xl">Shopify Developer</small>
             <h1 class="text-4xl font-bold md:text-4xl lg:text-6xl">Hello, my name is Ali Haider</h1>
-            <p class="mt-6 text-lg leading-7 text-gray-500 lg:text-2xl lg:leading-9">I am an experienced Shopify developer with a passion for creating customized e-commerce solutions. With 4+ years of experience, I have helped businesses of all sizes to launch and maintain their online stores on the Shopify platform.</p>
+            <p class="mt-6 text-black text-lg leading-7 lg:text-2xl lg:leading-9">I am an experienced Shopify developer with a passion for creating customized e-commerce solutions. With 4+ years of experience, I have helped businesses of all sizes to launch and maintain their online stores on the Shopify platform.</p>
             <div class="mt-8 flex items-center justify-center gap-x-5 lg:mt-10">
               <a class="rounded-md border border-solid border-transparent bg-green py-1 px-3 text-white lg:px-5 lg:py-2" href="#projects">Projects</a>
               <a class="rounded-md border border-solid border-green py-1 px-3 lg:px-5 lg:py-2" href="https://www.linkedin.com/in/ali-haider-455601244/" target="_blank">LinkedIn</a>
@@ -55,7 +72,7 @@
           <h1 class="pb-2 text-5xl font-bold">Projects</h1>
           <hr class="w-24 rounded-lg border-2 border-green" />
         </div>
-        <div class="flex w-full flex-col items-center justify-center gap-16 py-20">
+        <div class="flex w-full flex-col items-center justify-center gap-16 py-20 slider_projects">
           <div class="card flex w-full max-w-5xl flex-col-reverse items-center justify-center rounded-2xl overflow-hidden bg-white py-0 shadow-xl md:flex-row">
             <div class="flex w-full items-center justify-center">
               <div class="flex flex-col p-10 text-left md:px-14 md:py-0">
@@ -96,6 +113,20 @@
             </div>
             <div class="w-full">
               <img class="w-full" src="https://cdn.shopify.com/s/files/1/0657/2444/9001/files/template.png?v=1677584587" />
+            </div>
+          </div>
+          <div class="card flex w-full max-w-5xl flex-col-reverse items-center justify-center rounded-2xl overflow-hidden bg-white py-0 shadow-xl md:flex-row">
+            <div class="flex w-full items-center justify-center">
+              <div class="flex flex-col p-10 text-left md:px-14 md:py-0">
+                <h1 class="text-4xl font-bold">Barton Watch Bands</h1>
+                <p class="mt-5 text-lg text-gray-500">The company specializes in designing watch straps in a variety of styles, sizes, colors and materials including canvas, leather, nylon and silicone that can be swapped in and out without tools, enabling consumers to customize traditional and smartwatches.</p>
+                <div class="mt-5 flex">
+                  <a class="rounded-full border border-solid border-black px-5 py-2 font-bold" href="https://www.bartonwatchbands.com" target="_blank">View Project</a>
+                </div>
+              </div>
+            </div>
+            <div class="w-full">
+              <img class="w-full" src="https://cdn.shopify.com/s/files/1/0763/4622/9047/files/Black_White_Minimalist_Logo.png?v=1685614724" />
             </div>
           </div>
         </div>
@@ -163,7 +194,7 @@
   </div>
   <script src="https://smtpjs.com/v3/smtp.js">
   </script>
-  <script>
+  <script type="text/javascript">
     var btn_submit = document.getElementById('btn_submit');
     btn_submit.addEventListener('click', function(e) {
       e.preventDefault();
@@ -192,6 +223,21 @@
         });
       });
     });
+
+    if (window.innerWidth > 1024) {
+    $(document).ready(function() {
+  $('.slider_projects').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
+});
+}
   </script>
 </body>
 
